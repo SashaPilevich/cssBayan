@@ -192,7 +192,7 @@ input:checked + label .content {
     height: 55vh;
   }
 }
-@media (min-width: 1080px) {
+@media (min-width: 1181px) {
   h3 {
     font-size: 1.6rem;
   }
