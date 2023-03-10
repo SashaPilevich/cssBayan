@@ -3,53 +3,71 @@
   margin: 0;
   box-sizing: border-box;
 }
-body{
+body {
   background-color: #d1d6f8;
-  font-family: 'Mulish';
+  font-family: "Mulish";
 }
 .container {
   margin: 0 auto;
   width: 85vw;
   background-color: #d1d6f8;
+  padding-top: 2rem;
 }
 label {
   cursor: pointer;
   background-color: #f9faff;
   display: block;
-  padding: 0 1rem 1rem;
   width: 100%;
   box-sizing: border-box;
   z-index: 100;
   margin: 0 0 0.5rem;
   transition: color 0.35s;
   border-radius: 1rem;
+  padding-bottom: 1rem;
 }
 input {
-  opacity: 0;
+  display: none;
 }
-.info{
+.item {
+  height: 8vh;
+}
+
+.info {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 8vh;
+  padding: 2vh;
 }
-h3{
-  color: #A1ACFC;
+h3 {
+  color: #a1acfc;
   text-transform: uppercase;
   padding: 0.9rem;
   font-size: 1rem;
 }
 .switch {
-  stroke: #A1ACFC;
-}
-input:checked + label .switch {
-  transform: rotate(45deg);
-  transition: all 0.3s ease;
+  stroke:#a1acfc;
+  /* opacity: 0; for desctop&tablet */
   opacity: 1;
-  stroke: #e94d66;
 }
-input:checked + label h3{
+/* first item */
+.first .item {
+  height: 40vh;
+}
+.first .switch {
+  stroke: #e94d66;
+  transform: rotate(45deg);
+   /* opacity: 0; for desctop&tablet */
+  opacity: 1;
+}
+.first h3 {
   color: #e94d66;
 }
+.first .content {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .content {
   width: 90%;
   height: 30vh;
@@ -60,6 +78,8 @@ input:checked + label h3{
   margin: 0 auto;
   background-color: #f1f2fe;
   border-radius: 1rem;
+  opacity: 0;
+  transform: scale(0.6);
 }
 .content img {
   width: 40vw;
@@ -70,12 +90,60 @@ input:checked + label h3{
 .content img.pay {
   width: 50vw;
 }
-p{
-  font-family: 'Montserrat';
+p {
+  font-family: "Montserrat";
   font-size: 0.7rem;
   margin-bottom: 1rem;
   text-align: center;
   color: #020c17;
   opacity: 0.8;
   text-transform: uppercase;
+}
+/* when hover container for desktop */
+.container:hover .first.switch,
+.container:hover .switch {
+  opacity: 1;
+  transition: all 0.4s ease;
+  stroke: #e94d66;
+}
+.container:hover h3 {
+  color: #e94d66;
+  transition: all 0.4s ease;
+}
+
+/* when hover item for desktop*/
+.item:hover{
+  height: 60vh;
+  transition: all 0.3s ease;
+}
+.item:hover .switch {
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+  opacity: 1;
+  stroke: #e94d66;
+}
+.item:hover .content {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.4s ease;
+  height: 50vh;
+}
+
+/* when checked */
+input:checked + label:not(.first) .switch {
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+  opacity: 1;
+  stroke: #e94d66;
+}
+input:checked + label h3 {
+  color: #e94d66;
+}
+input:checked + label:not(.first) .item {
+  height: 40vh;
+}
+input:checked + label:not(.first) .content {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.4s ease;
 }
