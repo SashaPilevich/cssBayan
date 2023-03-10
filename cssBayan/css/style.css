@@ -26,7 +26,10 @@ label {
   padding-bottom: 1rem;
 }
 input {
-  display: none;
+  visibility: hidden;
+  width: 0vw;
+  height: 0vh;
+
 }
 .item {
   height: 8vh;
@@ -48,21 +51,6 @@ h3 {
 .switch {
   stroke: #a1acfc;
   opacity: 1;
-}
-.first .item {
-  height: 40vh;
-}
-.first .switch {
-  stroke: #e94d66;
-  transform: rotate(45deg);
-  opacity: 1;
-}
-.first h3 {
-  color: #e94d66;
-}
-.first .content {
-  opacity: 1;
-  transform: scale(1);
 }
 .content {
   width: 90%;
@@ -95,33 +83,35 @@ p {
   opacity: 0.8;
   text-transform: uppercase;
 }
-label:not(.first):active .content img,
-label:not(.first):active .content p{
+
+label:active .content img,
+label:active .content p{
   opacity: 0.5;
   transition: all 0.4s ease;
 }
-label:not(.first):active .info h3{
+label:active .info h3{
   color: #a1acfc;
   transition: all 0.4s ease;
 }
-label:not(.first):active .info .switch{
+label:active .info .switch{
   stroke: #a1acfc;
 }
-input:checked + label:not(.first) .switch {
+input:checked + label .switch {
   transform: rotate(45deg);
   transition: all 0.4s ease-in;
   opacity: 1;
   stroke: #e94d66;
 }
+
 input:checked + label h3 {
   color: #e94d66;
   transition: all 0.4s ease-in;
 }
-input:checked + label:not(.first) .item {
+input:checked + label .item {
   height: 40vh;
   transition: all 0.4s ease-in;
 }
-input:checked + label:not(.first) .content {
+input:checked + label .content {
   opacity: 1;
   transform: scale(1);
   transition: all 0.5s ease-in;
@@ -132,9 +122,6 @@ input:checked + label:not(.first) .content {
   }
   h3 {
     font-size: 1.1rem;
-  }
-  .first .item {
-    height: 50vh;
   }
   .content {
     width: 85%;
@@ -153,16 +140,13 @@ input:checked + label:not(.first) .content {
     font-size: 0.8rem;
     margin-bottom: 1.1rem;
   }
-  input:checked + label:not(.first) .item {
+  input:checked + label .item {
     height: 50vh;
   }
 }
 @media (min-width: 820px) {
   h3 {
     font-size: 1.4rem;
-  }
-  .first .item {
-    height: 55vh;
   }
   .content {
     width: 70%;
@@ -180,16 +164,13 @@ input:checked + label:not(.first) .content {
   p {
     font-size: 1rem;
   }
-  input:checked + label:not(.first) .item {
+  input:checked + label .item {
     height: 55vh;
   }
 }
 @media (min-width: 1080px) {
   h3 {
     font-size: 1.6rem;
-  }
-  .first .item {
-    height: 60vh;
   }
   .content {
     width: 65%;
@@ -207,11 +188,14 @@ input:checked + label:not(.first) .content {
   p {
     font-size: 1.1rem;
   }
-  input:checked + label:not(.first) .item {
+  input:checked + label .item {
     height: 60vh;
   }
   .switch,
   .first .switch {
+    opacity: 0;
+  }
+  input:checked + label .switch{
     opacity: 0;
   }
   .container:hover .first.switch,
