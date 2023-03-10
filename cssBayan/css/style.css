@@ -32,7 +32,6 @@ input {
   height: 8vh;
   padding-top: 0.5rem;
 }
-
 .info {
   display: flex;
   justify-content: space-between;
@@ -50,7 +49,6 @@ h3 {
   stroke: #a1acfc;
   opacity: 1;
 }
-/* first item */
 .first .item {
   height: 40vh;
 }
@@ -66,7 +64,6 @@ h3 {
   opacity: 1;
   transform: scale(1);
 }
-
 .content {
   width: 90%;
   height: 30vh;
@@ -110,23 +107,24 @@ label:not(.first):active .info h3{
 label:not(.first):active .info .switch{
   stroke: #a1acfc;
 }
-/* when checked */
 input:checked + label:not(.first) .switch {
   transform: rotate(45deg);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease-in;
   opacity: 1;
   stroke: #e94d66;
 }
 input:checked + label h3 {
   color: #e94d66;
+  transition: all 0.4s ease-in;
 }
 input:checked + label:not(.first) .item {
   height: 40vh;
+  transition: all 0.4s ease-in;
 }
 input:checked + label:not(.first) .content {
   opacity: 1;
   transform: scale(1);
-  transition: all 0.4s ease;
+  transition: all 0.5s ease-in;
 }
 @media (min-width: 568px) {
   .container {
@@ -135,7 +133,6 @@ input:checked + label:not(.first) .content {
   h3 {
     font-size: 1.1rem;
   }
-  /* first item */
   .first .item {
     height: 50vh;
   }
@@ -156,17 +153,14 @@ input:checked + label:not(.first) .content {
     font-size: 0.8rem;
     margin-bottom: 1.1rem;
   }
-  /* when checked */
   input:checked + label:not(.first) .item {
     height: 50vh;
-    transition: all 0.2s ease-in-out;
   }
 }
 @media (min-width: 820px) {
   h3 {
     font-size: 1.4rem;
   }
-  /* first item */
   .first .item {
     height: 55vh;
   }
@@ -186,17 +180,14 @@ input:checked + label:not(.first) .content {
   p {
     font-size: 1rem;
   }
-  /* when checked */
   input:checked + label:not(.first) .item {
     height: 55vh;
-    transition: all 0.2s ease-in-out;
   }
 }
 @media (min-width: 1080px) {
   h3 {
     font-size: 1.6rem;
   }
-  /* first item */
   .first .item {
     height: 60vh;
   }
@@ -216,42 +207,37 @@ input:checked + label:not(.first) .content {
   p {
     font-size: 1.1rem;
   }
-  /* when checked */
   input:checked + label:not(.first) .item {
     height: 60vh;
-    transition: all 0.2s ease-in-out;
   }
   .switch,
   .first .switch {
     opacity: 0;
   }
-  /* when hover container for desktop */
   .container:hover .first.switch,
   .container:hover .switch {
     opacity: 1;
-    transition: all 0.4s ease;
+    transition: all 0.4s ease-in-out;
     stroke: #e94d66;
   }
   .container:hover h3 {
     color: #e94d66;
-    transition: all 0.4s ease;
+    transition: all 0.4s ease-in-out;
   }
-
-  /* when hover item for desktop*/
   .item:hover {
     height: 60vh;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease-in-out;
   }
   .item:hover .switch {
     transform: rotate(45deg);
-    transition: all 0.3s ease;
+    transition: all 0.4s ease-in-out;
     opacity: 1;
     stroke: #e94d66;
   }
   .item:hover .content {
     opacity: 1;
     transform: scale(1);
-    transition: all 0.4s ease;
+    transition: all 0.5s ease-in-out;
     height: 50vh;
   }
 }
