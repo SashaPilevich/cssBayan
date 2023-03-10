@@ -25,6 +25,9 @@ label {
   border-radius: 1rem;
   padding-bottom: 1rem;
 }
+label:last-child{
+  margin-bottom: 3rem;
+}
 input {
   visibility: hidden;
   width: 0vw;
@@ -87,15 +90,19 @@ p {
 label:active .content img,
 label:active .content p{
   opacity: 0.5;
-  transition: all 0.4s ease;
+  transition: all 0.1s ease-in-out;
+  
 }
 label:active .info h3{
   color: #a1acfc;
-  transition: all 0.4s ease;
+  transition: all 0.1s ease-in-out; 
+  
 }
 label:active .info .switch{
-  stroke: #a1acfc;
+  stroke: #a1acfc; 
+  transition: all 0.1s ease-in-out;
 }
+
 input:checked + label .switch {
   transform: rotate(45deg);
   transition: all 0.4s ease-in;
@@ -115,6 +122,25 @@ input:checked + label .content {
   opacity: 1;
   transform: scale(1);
   transition: all 0.5s ease-in;
+}
+@media (min-width: 426px) {
+  
+  .content {
+    height: 35vh;
+  }
+  input:checked + label .item {
+    height: 45vh;
+  } 
+  .content img {
+    width: 30vw;
+  }
+  .content img.pay {
+    width: 40vw;
+  }
+  .content img.student {
+    width: 25vw;
+  }
+ 
 }
 @media (min-width: 568px) {
   .container {
