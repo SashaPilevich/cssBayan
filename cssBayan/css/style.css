@@ -30,6 +30,7 @@ input {
 }
 .item {
   height: 8vh;
+  padding-top: 0.5rem;
 }
 
 .info {
@@ -46,7 +47,7 @@ h3 {
   font-size: 1rem;
 }
 .switch {
-  stroke:#a1acfc;
+  stroke: #a1acfc;
   /* opacity: 0; for desctop&tablet */
   opacity: 1;
 }
@@ -57,7 +58,7 @@ h3 {
 .first .switch {
   stroke: #e94d66;
   transform: rotate(45deg);
-   /* opacity: 0; for desctop&tablet */
+  /* opacity: 0; for desctop&tablet */
   opacity: 1;
 }
 .first h3 {
@@ -100,7 +101,7 @@ p {
   text-transform: uppercase;
 }
 /* when hover container for desktop */
-.container:hover .first.switch,
+/* .container:hover .first.switch,
 .container:hover .switch {
   opacity: 1;
   transition: all 0.4s ease;
@@ -109,10 +110,10 @@ p {
 .container:hover h3 {
   color: #e94d66;
   transition: all 0.4s ease;
-}
+} */
 
 /* when hover item for desktop*/
-.item:hover{
+/* .item:hover{
   height: 60vh;
   transition: all 0.3s ease;
 }
@@ -127,7 +128,7 @@ p {
   transform: scale(1);
   transition: all 0.4s ease;
   height: 50vh;
-}
+} */
 
 /* when checked */
 input:checked + label:not(.first) .switch {
@@ -146,4 +147,68 @@ input:checked + label:not(.first) .content {
   opacity: 1;
   transform: scale(1);
   transition: all 0.4s ease;
+}
+@media (min-width: 568px) {
+  .container {
+    width: 65vw;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  /* first item */
+  .first .item {
+    height: 50vh;
+  }
+  .content {
+    width: 85%;
+    height: 40vh;
+  }
+  .content img {
+    width: 25vw;
+  }
+  .content img.pay {
+    width: 35vw;
+  }
+  .content img.student {
+    width: 20vw;
+  }
+  p {
+    font-size: 0.8rem;
+    margin-bottom: 1.1rem;
+  }
+  /* when checked */
+  input:checked + label:not(.first) .item {
+    height: 50vh;
+    transition: all 0.2s ease-in-out;
+  }
+}
+@media(min-width:820px){
+  h3 {
+    font-size: 1.4rem;
+  }
+  /* first item */
+  .first .item {
+    height: 55vh;
+  }
+  .content {
+    width: 70%;
+    height: 45vh;
+  }
+  .content img {
+    width: 20vw;
+  }
+  .content img.pay {
+    width: 25vw;
+  }
+  .content img.student {
+    width: 15vw;
+  }
+  p {
+    font-size: 1rem;
+  }
+  /* when checked */
+  input:checked + label:not(.first) .item {
+    height: 55vh;
+    transition: all 0.2s ease-in-out;
+  }
 }
