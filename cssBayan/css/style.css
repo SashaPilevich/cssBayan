@@ -73,13 +73,13 @@ h3 {
   transition: all 0.3s ease;
 }
 .content img {
-  width: 40vw;
+  width: 30vw;
 }
 .content img.student {
-  width: 36vw;
+  width: 25vw;
 }
 .content img.pay {
-  width: 50vw;
+  width: 45vw;
 }
 p {
   font-family: "Montserrat";
@@ -127,7 +127,7 @@ input:checked + label .content {
   transform: scale(1);
   transition: all 0.5s ease-in;
 }
-@media (min-width: 426px) {
+@media (min-width: 474px) {
   
   .content {
     height: 35vh;
@@ -135,14 +135,8 @@ input:checked + label .content {
   input:checked + label .item {
     height: 45vh;
   } 
-  .content img {
-    width: 30vw;
-  }
   .content img.pay {
     width: 40vw;
-  }
-  .content img.student {
-    width: 25vw;
   }
  
 }
