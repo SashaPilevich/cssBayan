@@ -6,6 +6,7 @@
 body {
   background-color: #d1d6f8;
   font-family: "Mulish";
+  font-size: 1rem;
 }
 .container {
   margin: 0 auto;
@@ -60,7 +61,7 @@ h3 {
 }
 .content {
   width: 90%;
-  height: 30vh;
+  height: 35vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,14 +74,15 @@ h3 {
   transition: all 0.3s ease;
 }
 .content img {
-  width: 30vw;
-}
-.content img.student {
   width: 25vw;
 }
-.content img.pay {
-  width: 45vw;
+.content img.student {
+  width: 20vw;
 }
+.content img.pay {
+  width: 40vw;
+}
+
 p {
   font-family: "Montserrat";
   font-size: 0.7rem;
@@ -119,7 +121,7 @@ input:checked + label h3 {
   transition: all 0.4s ease-in;
 }
 input:checked + label .item {
-  height: 40vh;
+  height: 45vh;
   transition: all 0.4s ease-in;
 }
 input:checked + label .content {
@@ -127,45 +129,34 @@ input:checked + label .content {
   transform: scale(1);
   transition: all 0.5s ease-in;
 }
-@media (min-width: 474px) {
-  
-  .content {
-    height: 35vh;
-  }
-  input:checked + label .item {
-    height: 45vh;
-  } 
-  .content img.pay {
-    width: 40vw;
-  }
- 
-}
-@media (min-width: 568px) {
+
+@media (min-width: 548px) {
   .container {
     width: 65vw;
   }
   h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   .content {
-    width: 85%;
-    height: 40vh;
+    width: 85%; 
+    height: 50vh;
   }
   .content img {
     width: 25vw;
   }
+  .content img.student {
+    width: 18vw;
+  }
   .content img.pay {
     width: 35vw;
-  }
-  .content img.student {
-    width: 20vw;
   }
   p {
     font-size: 0.8rem;
     margin-bottom: 1.1rem;
   }
   input:checked + label .item {
-    height: 50vh;
+    height: 60vh; 
+   
   }
 }
 @media (min-width: 820px) {
@@ -192,9 +183,9 @@ input:checked + label .content {
     height: 55vh;
   }
 }
-@media (min-width: 1181px) {
+@media (min-width: 1200px) {
   h3 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
   .content {
     width: 65%;
@@ -210,7 +201,7 @@ input:checked + label .content {
     width: 10vw;
   }
   p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   input:checked + label .item {
     height: 60vh;
