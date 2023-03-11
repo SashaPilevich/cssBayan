@@ -1,0 +1,249 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #d1d6f8;
+  font-family: "Mulish";
+  font-size: 1rem;
+}
+.container {
+  margin: 0 auto;
+  width: 85vw;
+  background-color: #d1d6f8;
+  padding-top: 2rem;
+}
+label {
+  cursor: pointer;
+  background-color: #f9faff;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 100;
+  margin: 0 0 0.5rem;
+  transition: color 0.35s;
+  border-radius: 1rem;
+  padding-bottom: 1rem;
+}
+
+label:last-child {
+  margin-bottom: 3rem;
+}
+input {
+  visibility: hidden;
+  width: 0vw;
+  height: 0vh;
+}
+.item {
+  height: 8vh;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  transition: all 0.4s ease;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+  padding: 2vh;
+}
+h3 {
+  color: #a1acfc;
+  text-transform: uppercase;
+  padding: 0.9rem;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+}
+.switch {
+  stroke: #a1acfc;
+  opacity: 1;
+  transition: all 0.4s ease;
+}
+.content {
+  width: 90%;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #f1f2fe;
+  border-radius: 1rem;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.3s ease;
+  
+}
+.content img {
+  width: 25vw;
+}
+.content img.student {
+  width: 20vw;
+}
+.content img.pay {
+  width: 40vw;
+}
+
+p {
+  font-family: "Montserrat";
+  font-size: 0.7rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #020c17;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+label:active .content img,
+label:active .content p {
+  opacity: 0.5;
+  transition: all 0.1s ease-in-out;
+}
+label:active .info h3 {
+  color: #a1acfc;
+  transition: all 0.1s ease-in-out;
+}
+label:active .info .switch {
+  stroke: #a1acfc;
+  transition: all 0.1s ease-in-out;
+}
+
+input:checked + label .switch {
+  transform: rotate(45deg);
+  transition: all 0.4s ease-in;
+  opacity: 1;
+  stroke: #e94d66;
+}
+
+input:checked + label h3 {
+  color: #e94d66;
+  transition: all 0.4s ease-in;
+}
+input:checked + label .item {
+  height: 45vh;
+  transition: all 0.4s ease-in;
+}
+input:checked + label .content {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.5s ease-in;
+}
+
+@media (min-width: 34rem) {
+  .container {
+    width: 65vw;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .content {
+    width: 85%;
+    height: 50vh;
+  }
+  .content img {
+    width: 25vw;
+  }
+  .content img.student {
+    width: 18vw;
+  }
+  .content img.pay {
+    width: 35vw;
+  }
+  p {
+    font-size: 0.8rem;
+    margin-bottom: 1.1rem;
+  }
+  input:checked + label .item {
+    height: 60vh;
+  }
+}
+@media (min-width: 51rem) {
+  h3 {
+    font-size: 1.4rem;
+  }
+  .content {
+    width: 70%;
+    height: 45vh;
+  }
+  .content img {
+    width: 20vw;
+  }
+  .content img.pay {
+    width: 25vw;
+  }
+  .content img.student {
+    width: 15vw;
+  }
+  p {
+    font-size: 1rem;
+  }
+  input:checked + label .item {
+    height: 55vh;
+  }
+}
+@media (min-width: 75rem) {
+  h3 {
+    font-size: 1.8rem;
+  }
+  .content {
+    width: 65%;
+    height: 50vh;
+  }
+  .content img {
+    width: 15vw;
+  }
+  .content img.pay {
+    width: 20vw;
+  }
+  .content img.student {
+    width: 10vw;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  input:checked + label .item {
+    height: max-content;
+  }
+}
+@media (hover: hover) {
+  .switch,
+  .first .switch {
+    opacity: 0;
+  }
+  input:checked + label .switch {
+    opacity: 0;
+  }
+  .container:hover .first.switch,
+  .container:hover .switch {
+    opacity: 1;
+    stroke: #e94d66;
+    transition: all 0.4s ease;
+  }
+  .container:hover h3 {
+    color: #e94d66;
+    transition: all 0.4s ease;
+  }
+  .item:hover {
+    height: 60vh;
+    transition: all 0.4s ease;
+  }
+  .item:hover .switch {
+    transform: rotate(45deg);
+    transition: all 0.4s ease;
+    opacity: 1;
+    stroke: #e94d66;
+  }
+  .item:hover .content {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s ease;
+  }
+  
+}
+@media (hover: hover) and (max-width:548px) {
+  .item:hover {
+    height: 45vh;
+    transition: all 0.4s ease;
+  }
+}
